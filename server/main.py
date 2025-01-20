@@ -96,11 +96,11 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 @app.post("/register_new_user")
-async def register_new_user(file: UploadFile = File(...), text=None):
+async def register_new_user(file: UploadFile = File(...), text: str = Form(...)):
+    logging.info(f"Received registration request for: {text}")
     try:
         file.filename = f"{uuid.uuid4()}.png"
         contents = await file.read()
-
         with open(file.filename, "wb") as f:
             f.write(contents)
 
@@ -117,11 +117,9 @@ async def register_new_user(file: UploadFile = File(...), text=None):
             pickle.dump(embeddings, file_)
 
         os.remove(file.filename)
-        
         return {'registration_status': 200}
     except Exception as e:
         logging.error(f"Error in registering new user: {e}")
-        # Clean up temporary file in case of error
         if os.path.exists(file.filename):
             os.remove(file.filename)
         return {'error': str(e)}, 500
