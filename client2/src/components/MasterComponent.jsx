@@ -15,7 +15,7 @@ export function MasterComponent() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col">
       <header className="bg-white dark:bg-gray-800 shadow">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white">Face Authentication System</h1>
+          <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white">Automatic Door Lock System</h1>
         </div>
       </header>
 

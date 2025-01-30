@@ -5,7 +5,7 @@ import { send_img_login, send_img_logout } from "../api"
 
 export function Button({ lastFrame, setShowWebcam, setIsDialogOpen, setDialogType }) {
   const handleLogin = async () => {
-    if (!lastFrame) { 
+    if (!lastFrame) {
       toast.error("Please capture a frame first")
       return
     }
@@ -41,7 +41,7 @@ export function Button({ lastFrame, setShowWebcam, setIsDialogOpen, setDialogTyp
         }}
       >
         <FaSignInAlt className="mr-2" />
-        Login
+        Open Door
       </button>
       <button
         className="flex items-center btn btn-secondary"
@@ -51,7 +51,7 @@ export function Button({ lastFrame, setShowWebcam, setIsDialogOpen, setDialogTyp
         }}
       >
         <FaSignOutAlt className="mr-2" />
-        Logout
+        Lock Door
       </button>
       <button
         className="flex items-center btn btn-success"
@@ -61,7 +61,7 @@ export function Button({ lastFrame, setShowWebcam, setIsDialogOpen, setDialogTyp
         }}
       >
         <FaUserPlus className="mr-2" />
-        Register
+        New Member
       </button>
       <button
         className="flex items-center btn btn-info"
@@ -71,7 +71,7 @@ export function Button({ lastFrame, setShowWebcam, setIsDialogOpen, setDialogTyp
         }}
       >
         <FaCog className="mr-2" />
-        Admin
+        Owner Credentials
       </button>
     </div>
   )
